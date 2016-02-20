@@ -2,37 +2,41 @@
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
-	initializePage();
+  initializePage();
 })
 
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	$('.project a').click(addProjectDetails);
-
-	$('#colorBtn').click(randomizeColors);
+  initMap();
 }
 
-/*
- * Make an AJAX call to retrieve project details and add it in
- */
-function addProjectDetails(e) {
-	// Prevent following the link
-	e.preventDefault();
-
-	// Get the div ID, e.g., "project3"
-	var projectID = $(this).closest('.project').attr('id');
-	// get rid of 'project' from the front of the id 'project3'
-	var idNumber = projectID.substr('project'.length);
-
-	console.log("User clicked on project " + idNumber);
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
 }
 
-/*
- * Make an AJAX call to retrieve a color palette for the site
- * and apply it
- */
-function randomizeColors(e) {
-	console.log("User clicked on color button");
+function statusChangeCallback(response) {
+  console.log('Facebook login status changed.');
+  console.log(response);
+  // The response object is returned with a status field that lets the
+  // app know the current login status of the person.
+  // Full docs on the response object can be found in the documentation
+  // for FB.getLoginStatus().
+  if (response.status === 'connected') {
+    // Logged into your app and Facebook.
+    FB.api('/me?fields=name,first_name,picture.width(480)', loginSuccessful);
+  }
 }
+
+function loginSuccessful(response) {
+  console.log(response);
+  console.log('Logged in as ' + response.name);
+  $('.jumbotron .facebookLogin').hide();
+  $('.jumbotron #name').html('<h1>' + response.name + '</h1>');
+  $('#photo').html('<h1>Profile Photo</h1><img src="' + response.picture.data.url + '" class="img-responsive" />');
+
+}
+

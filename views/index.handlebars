@@ -2,13 +2,13 @@
 
 <html>
 <head>
-	<title>HCI Project Portfolio</title>	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="/css/introHCI.css" rel="stylesheet">
-	<!-- this is a comment in HTML -->
+  <title>HCI Project Portfolio</title>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="/css/introHCI.css" rel="stylesheet">
+  <!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,33 +19,37 @@
 </head>
 
 <body>
-	<div class="container">
-		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-		<!-- p means paragraph -->
-		<div class="jumbotron">
-			<h1>Michael Bernstein</h1>
-			<p>human-computer interaction &middot; social computing &middot; crowdsourcing</p>
-			<button id="colorBtn" class="btn btn-primary btn-lg">Colors!</button>
-		</div>
+  <div class="container">
+    <!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+    <!-- p means paragraph -->
+    <div class="jumbotron">
+        <h1 id="name">Michael Bernstein</h1>
+        <p>human-computer interaction &middot; social computing &middot; crowdsourcing</p>
+        <p class="facebookLogin">
+          Please login through Facebook
+          <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+          </fb:login-button>
+        </p>
+    </div>
 
-		<h4>Projects</h4>
-		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
-		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
-		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
-		{{#each projects}}
-		<div class="project" id="{{id}}">
-			<div class="thumbnail">
-				<a href="#">
-					<img src="images/{{image}}" alt="Lorem Pixel image" class="img">
-					<p>{{name}}</p>
-				</a>
-				<div class="details"></div>
-			</div>
-		</div>
-		{{/each}}
+  </div>
 
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/introHCI.js"></script>
+  <div id="row">
+    <div id="photo" class="col-md-12">
+      <h1>Profile Photo</h1>
+    </div>
+
+    <div id="googleMaps" class="col-md-12">
+    </div>
+
+    <div id="camera" class="col-md-12">
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  {{> facebook}}
+  {{> googleMaps}}
+  <script src="/js/introHCI.js"></script>
 </body>
 </html>

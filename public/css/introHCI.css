@@ -30,6 +30,11 @@
      color: #6e6e6e;
 }
 
+.jumbotron img {
+     padding: 5px;
+     float:left;
+}
+
 .project a {
      text-align: center;
 }
