@@ -39,6 +39,10 @@ html, body, .container {
     float:left;
 }
 
+.profile {
+    margin-bottom: 20px;
+}
+
 .profile div, video, canvas {
     width: 100%;
     margin-left: auto;

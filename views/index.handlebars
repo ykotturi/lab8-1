@@ -37,22 +37,23 @@
       <img id="photo" class='img-responsive' src="images/lorempixel.people.1.jpeg" />
     </div>
 
+    <div id="camera" class="profile">
+      <video autoplay id="camera-video"></video>
+      <canvas id="camera-canvas" style="display: none;" ></canvas>
+      <button id="camera-button">Say Cheese!</button>
+      <button id="camera-change">Change Profile Picture</button>
+    </div>
+
     <div id="googleMaps" class="profile">
       <h1>Where am I?</h1>
       <div id="map"></div>
     </div>
+  </div>
 
-    <div id="camera" class="profile">
-      <video autoplay id="camera-video"></video>
-      <canvas id="camera-canvas"></canvas>
-      <button id="camera-button">Capture</button>
-      <button id="camera-reset">Reset</button>
-    </div>
-    </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/canvas-to-blob.js"></script>
+  <script src="/js/canvas-to-blob.min.js"></script>
   <script src="/js/introHCI.js"></script>
   {{> facebook}}
   <script src="/js/facebook.js"></script>

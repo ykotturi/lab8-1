@@ -9,7 +9,7 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-  $('#camera-reset').click(resetCamera);
   initCamera();
+  $('#camera-change').click(enableCamera);
 }
 
