@@ -32,24 +32,27 @@
         </p>
     </div>
 
-  </div>
-
-  <div id="row">
-    <div id="photo" class="col-md-12">
+    <div id="photo" class="profile">
       <h1>Profile Photo</h1>
     </div>
 
-    <div id="googleMaps" class="col-md-12">
+    <div id="googleMaps" class="profile">
+      <h1>Where am I?</h1>
+      <div id="map"></div>
     </div>
 
-    <div id="camera" class="col-md-12">
+    <div id="camera" class="profile">
     </div>
+
   </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  {{> facebook}}
-  {{> googleMaps}}
   <script src="/js/introHCI.js"></script>
+  {{> facebook}}
+  <script src="/js/facebook.js"></script>
+  {{> googleMaps}}
+  <script src="/js/googleMaps.js"></script>
+
 </body>
 </html>
