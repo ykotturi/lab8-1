@@ -15,5 +15,5 @@ function initMap() {
       map: map,
       title: "UCSD"
   });
-
 }
+
