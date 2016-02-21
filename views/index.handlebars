@@ -43,13 +43,23 @@
     </div>
 
     <div id="camera" class="col-md-12">
+      <video autoplay id="camera-video"></video>
+      <img src="" id="camera-image">
+      <canvas style="display:none" id="camera-canvas"></canvas>
+      <button id="camera-button">Capture</button>
     </div>
-  </div>
+    </div>
+
 
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  {{> facebook}}
-  {{> googleMaps}}
+  <script src="js/canvas-to-blob.js"></script>
   <script src="/js/introHCI.js"></script>
+  {{> facebook}}_
+  <script src="/js/facebook.js"></script>
+  {{> googleMaps}}
+  <script src="/js/googlemaps.js"></script>
+
+
 </body>
 </html>

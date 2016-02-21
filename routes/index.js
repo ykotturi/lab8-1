@@ -2,6 +2,22 @@
  * GET home page.
  */
 
+var fs = require('fs');
+
+exports.changeProfilePhoto = function(req,res) {
+    var imageName = "profile.png";
+
+	var image = req.body.img;
+	var newPath = __dirname + "/../public/images/" + imageName;
+
+	// write file to uploads/fullsize folder
+	console.log("Saving to " + newPath);
+	fs.writeFile(newPath, image, function (err) {
+		// let's see it
+		res.redirect("/images/" + imageName);
+	});
+}
+
 exports.view = function(req, res){
   res.render('index', {
 	'projects': [
