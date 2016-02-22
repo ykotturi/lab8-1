@@ -22,6 +22,6 @@ function loginSuccessful(response) {
   console.log('Logged in as ' + response.name);
   $('.jumbotron .facebookLogin').hide();
   $('.jumbotron #name').html('<h1>' + response.name + '</h1>');
-  $('#photo').html('<h1>Profile Photo</h1><img src="' + response.picture.data.url + '" class="img-responsive" />');
+  $('#facebookPhoto #photo').attr('src', response.picture.data.url);
 }
 
